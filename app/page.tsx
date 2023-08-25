@@ -33,7 +33,7 @@ export default function Home() {
             </div>
 
             {/* Body */}
-            <div className="relative font-display z-[1] bg-gradient-to-b from-transparent to-gray-50">
+            <div className="relative font-display z-[1]">
 
                 <img className="mt-32 w-3/5 mx-auto object-contain" src="/img/banner.png"/>
 
