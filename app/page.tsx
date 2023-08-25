@@ -26,7 +26,8 @@ export default function Home() {
             {/* Photo */}
             <div className="sticky top-14">
                 <AspectRatio>
-                    <img className="h-full w-full mx-auto object-cover" src="/img/banner_image.jpeg"/>
+                    <img className="h-full w-full mx-auto object-cover contrast-50 saturate-50 blur-sm"
+                         src="/img/banner_image.jpeg"/>
                 </AspectRatio>
             </div>
 
@@ -42,7 +43,7 @@ export default function Home() {
                 <div className="mt-2 mx-auto text-center font-hw">28 Wai Man Road, Sai Kung, New Territories, Hong Kong
                 </div>
 
-                
+
             </div>
         </div>
     )
