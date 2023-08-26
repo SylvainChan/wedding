@@ -18,8 +18,18 @@ const config: Config = {
                 'gradient-conic':
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
+            fontFamily: {
+                sans: ['var(--font-inter)'],
+                mono: ['var(--font-roboto-mono)'],
+                qwitcher_grypen: ['var(--font-qwitcher_grypen)'],
+                ds: ['var(--font-ds)'],
+                lato: ['var(--font-lato)'],
+                mw: ['var(--font-mw)'],
+            },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 }
 export default config
