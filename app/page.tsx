@@ -10,7 +10,7 @@ import {
     TimelineConnector,
     TimelineContent,
     TimelineDot,
-    TimelineItem,
+    TimelineItem, timelineItemClasses,
     TimelineOppositeContent,
     TimelineSeparator
 } from "@mui/lab";
@@ -59,7 +59,7 @@ export default function Home() {
                     </video>
                 </>
                 <div className="absolute top-0 left-0 w-full">
-                    <article className="prose-green prose-2xl mt-32 mx-auto text-center font-mw text-teal-900">
+                    <article className="prose-green prose-2xl mt-14 mx-auto text-center font-mw text-teal-900">
                         <h3>Let's Celebrate</h3>
                         <img className={`my-10 w-3/5 mx-auto object-contain`}
                              style={{filter: `blur(${headerBlurRatio}px)`}}
@@ -68,18 +68,24 @@ export default function Home() {
                     </article>
 
 
-                    <img className="mt-32 mx-auto invert h-[80px]" src="https://www.wmhotel.hk/css/WMLOGO.png"/>
+                    <img className="mt-14 mx-auto invert h-[80px]" src="https://www.wmhotel.hk/css/WMLOGO.png"/>
                     <div className="mt-2 mx-auto text-center font-ds text-2xl">28 Wai Man Road, Sai Kung,
                         New Territories, Hong Kong
                     </div>
-
-
                 </div>
             </div>
 
             {/* Body */}
 
-            <div className="mt-32">
+            <div className="relative h-96">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.google.com/maps/embed/v1/place?q=WM+Hotel,+Wai+Man+Road,+Sai+Kung,+Hong+Kong&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                    aria-hidden="false"></iframe>
+            </div>
+
+            <div className="mt-14">
                 <div className="mx-auto w-1/6 h-0.5 bg-green-900"/>
 
                 <div className="relative my-10 mx-auto font-mw">
@@ -106,8 +112,17 @@ export default function Home() {
 
             <div className="mt-32 mx-auto grid grid-cols-1 gap-5">
                 <div className="text-5xl text-center font-mw text-green-900">Schedule</div>
-                <Timeline position={"alternate"}>
-                    <TimelineItemView time="16:00 WM Hotel" event="證婚儀式" desc="Same day, same dress, same location, same amazing photographer +
+                <Timeline sx={{
+                    [`& .${timelineItemClasses.root}:before`]: {
+                        flex: 0,
+                        padding: 0,
+                    },
+                }}>
+                    <TimelineItemView time="16:00 WM Hotel" event="The Ceremony" desc="Same day, same dress, same location, same amazing photographer +
+                                    videographer. Just a much more scaled down, intimate event with bridal party only in
+                                    what we have dubbed our 'minimony'."/>
+
+                    <TimelineItemView time="20:00 WM Hotel" event="Wedding Dinner" desc="Same day, same dress, same location, same amazing photographer +
                                     videographer. Just a much more scaled down, intimate event with bridal party only in
                                     what we have dubbed our 'minimony'."/>
                 </Timeline>
