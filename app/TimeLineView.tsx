@@ -45,7 +45,7 @@ export function TimelineItemView({
             endTime={endTime}
             timeZone="Asia/Hong_Kong"
             options="'Apple','Google','Outlook.com'"
-            buttonStyle="date"
+            buttonStyle="default"
             lightMode="system"
             pastDateHandling="disable"
           />

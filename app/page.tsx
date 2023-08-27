@@ -7,6 +7,7 @@ import { TopNavBar } from "@/app/TopNavBar";
 import { TimelineItemView } from "@/app/TimeLineView";
 import WMGoogleMap from "@/app/WMGoogleMap";
 import { APPCONSTANTS } from "@/utills/const";
+import ImageMasonry from "@/app/view/ImageGallery";
 
 export default function Home() {
   const [headerBlurRatio, setHeaderBlurRatio] = useState(8);
@@ -68,12 +69,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Body */}
-      {/*Google Map*/}
-      <WMGoogleMap />
+
       <div className="mt-14">
         <div className="mx-auto w-1/6 h-0.5 bg-green-900" />
-
         <div className="relative my-10 font-mw mx-3">
           <article className="prose text-center mx-auto">
             <p className="text-justify">
@@ -94,8 +92,60 @@ export default function Home() {
         </div>
         <div className="mx-auto w-1/6 h-0.5 bg-green-900" />
       </div>
+
+      {/* Transportation */}
+      <div className="mt-14 prose md:prose-xl mx-auto text-center font-mw">
+        <div className={"px-2"}>
+          <h2 className={"font-mw"}>Location & Transportation</h2>
+          <div className={"grid grid-cols-1 md:grid-cols-2 gap-4"}>
+            <div>
+              <WMGoogleMap />
+            </div>
+            <div>
+              <button
+                className={
+                  "border border-green-900 hover:bg-green-900 hover:text-white rounded-full px-4 py-2 text-sm"
+                }
+                onClick={gotoPublicTransportPdf}
+              >
+                Walking Route and Public Transport
+              </button>
+
+              <div className={"my-5 text-lg"}>
+                Hotel Complimentary Shuttle Bus From Hang Hau (Ming Shing
+                Street)
+              </div>
+              <div
+                className={
+                  "flex flex-row gap-2 flex-wrap text-2xl mx-auto justify-center"
+                }
+              >
+                <div>10:15</div>
+                <div>12:45</div>
+                <div>14:15</div>
+                <div>15:45</div>
+                <div>17:15</div>
+                <div>18:45</div>
+              </div>
+              <div className={"my-5 text-sm text-justify"}>
+                The pick-up and drop-off point at Ming Shing Street, Hang Hau
+                (between The Residence Oasis and East Point City). Each journey
+                takes approximately 30 minutes, and the actual time is subject
+                to change due to traffic conditions. Passengers are advised to
+                arrive at the shuttle bus stop 10 minutes in advance. Seats are
+                limited and exclusive for hotel-registered guests, and only
+                hand-carried baggage is allowed. Pet dogs are not permitted on
+                shuttle bus. Please contact the hotel concierge to reserve seats
+                for the shuttle bus departing from WM Hotel.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Schedule */}
       <div className="mt-32 mx-auto grid grid-cols-1 gap-5">
-        <div className="text-5xl text-center font-mw text-green-900">
+        <div className="text-4xl text-center font-mw text-green-900">
           Schedule
         </div>
         <Timeline
@@ -130,8 +180,19 @@ export default function Home() {
 
           <TimelineItemView
             date={"2023-12-21"}
-            startTime={"18:00"}
-            endTime={"22:00"}
+            startTime={"19:00"}
+            endTime={"20:00"}
+            location={"WM Hotel Basement Floor"}
+            name={"Reception"}
+            desc="Same day, same dress, same location, same amazing photographer +
+                                    videographer. Just a much more scaled down, intimate event with bridal party only in
+                                    what we have dubbed our 'minimony'."
+          />
+
+          <TimelineItemView
+            date={"2023-12-21"}
+            startTime={"20:00"}
+            endTime={"22:30"}
             location={"WM Hotel Basement Floor"}
             name={"Wedding Dinner"}
             desc="Same day, same dress, same location, same amazing photographer +
@@ -140,8 +201,15 @@ export default function Home() {
           />
         </Timeline>
       </div>
+
+      {/* Image */}
+      <ImageMasonry />
     </div>
   );
+
+  function gotoPublicTransportPdf() {
+    window.open(APPCONSTANTS.WM_TRANSPORT, "_blank");
+  }
 
   function getWeddingDateTime() {
     let datetime = new Date(APPCONSTANTS.WEDDING_START);

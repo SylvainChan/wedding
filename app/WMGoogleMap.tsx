@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WMGoogleMap() {
   return (
-    <div className="relative h-96">
+    <div className="relative min-h-[400px] h-full">
       <iframe
         width="100%"
         height="100%"
