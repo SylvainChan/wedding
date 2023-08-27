@@ -38,7 +38,9 @@ export default function Home() {
       <div className="relative overflow-clip">
         <>
           <video
+            controls={false}
             autoPlay
+            playsInline
             muted
             loop
             className="relative top-0 left-0 w-full blur-sm"
