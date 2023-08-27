@@ -75,16 +75,15 @@ export default function Home() {
         <div className="relative my-10 font-mw mx-3">
           <article className="prose text-center mx-auto">
             <p className="text-justify">
-              With all the change that’s happened in the world, we’ve decided to
-              reassess what our wedding will look like. With this in mind, we’ve
-              chosen to get married with a more intimate event on Saturday 20th
-              November. While this unfortunately means we won’t have the
-              opportunity to share the day with you, we want to extend our most
-              heartfelt thanks for your support as we continue to navigate a
-              wedding in a pandemic – every kind thought has meant a lot. We
-              cannot wait to share a celebratory drink and party with all of you
-              on the new date of Friday 26th November. We promise you’re in for
-              a real treat.
+              We're excited to share our special day with you! 🎉 We've planned
+              a memorable celebration for{" "}
+              <b className={"text-lg font-extrabold"}>
+                Thursday, 21st December 2023
+              </b>
+              , with a joyous and intimate ceremony, followed by a delicious
+              feast. We're honored that you're a part of our journey and can't
+              wait to create lifelong memories with our friends and family. Save
+              the date and get ready for a night to remember! 💕
             </p>
             <h3>With love,</h3>
             <h1>Janice & Sylvain.</h1>
@@ -94,9 +93,9 @@ export default function Home() {
       </div>
 
       {/* Transportation */}
-      <div className="mt-14 prose md:prose-xl mx-auto text-center font-mw">
+      <div className="mt-14 prose md:prose-xl mx-auto text-center font-lato">
         <div className={"px-2"}>
-          <h2 className={"font-mw"}>Location & Transportation</h2>
+          <h2 className={"text-lg font-light"}>Location & Transportation</h2>
           <div className={"grid grid-cols-1 md:grid-cols-2 gap-4"}>
             <div>
               <WMGoogleMap />
@@ -111,13 +110,13 @@ export default function Home() {
                 Walking Route and Public Transport
               </button>
 
-              <div className={"my-5 text-lg"}>
+              <h3 className={"my-5 font-light"}>
                 Hotel Complimentary Shuttle Bus From Hang Hau (Ming Shing
                 Street)
-              </div>
+              </h3>
               <div
                 className={
-                  "flex flex-row gap-2 flex-wrap text-2xl mx-auto justify-center"
+                  "flex flex-row gap-2 flex-wrap text-2xl font-bold mx-auto justify-center"
                 }
               >
                 <div>10:15</div>
@@ -127,7 +126,7 @@ export default function Home() {
                 <div>17:15</div>
                 <div>18:45</div>
               </div>
-              <div className={"my-5 text-sm text-justify"}>
+              <div className={"my-5 text-sm text-justify font-light"}>
                 The pick-up and drop-off point at Ming Shing Street, Hang Hau
                 (between The Residence Oasis and East Point City). Each journey
                 takes approximately 30 minutes, and the actual time is subject

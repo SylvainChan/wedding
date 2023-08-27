@@ -11,11 +11,6 @@ const config: Config = {
     container: {
       center: true,
     },
-    fontFamily: {
-      hw: ["cursive"],
-      display: ["Source Serif Pro", "Georgia", "serif"],
-      body: ["Synonym", "system-ui", "sans-serif"],
-    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -23,12 +18,23 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        mono: ["var(--font-roboto-mono)"],
         qwitcher_grypen: ["var(--font-qwitcher_grypen)"],
         ds: ["var(--font-ds)"],
         lato: ["var(--font-lato)"],
         mw: ["var(--font-mw)"],
+      },
+      fontWeight: {
+        thin: "100",
+        hairline: "100",
+        extralight: "200",
+        light: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+        extrabold: "800",
+        "extra-bold": "800",
+        black: "900",
       },
     },
   },
