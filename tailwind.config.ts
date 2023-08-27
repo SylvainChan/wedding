@@ -7,6 +7,9 @@ const config: Config = {
         './app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+        container: {
+            center: true
+        },
         fontFamily: {
             hw: ['cursive'],
             display: ['Source Serif Pro', 'Georgia', 'serif'],

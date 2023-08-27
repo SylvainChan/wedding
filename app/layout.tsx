@@ -62,7 +62,7 @@ export default function RootLayout({
         <html lang="en"
               className={`${inter.variable} ${roboto_mono.variable} ${qwitcher_grypen.variable} ${dancing_script.variable} ${lato.variable} ${mw.variable}`}>
         <body>
-        <Container className="" fixed>
+        <Container className="px-0">
             {children}
         </Container>
         </body>
