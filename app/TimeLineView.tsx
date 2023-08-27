@@ -5,18 +5,24 @@ import {
   TimelineItem,
   TimelineSeparator,
 } from "@mui/lab";
-import { Button } from "@mui/joy";
 import React from "react";
-import AppButton from "@/views/AppButton";
+
+import { AddToCalendarButton } from "add-to-calendar-button-react";
 
 export function TimelineItemView({
-  time,
-  event,
+  name,
+  date,
+  startTime,
+  endTime,
+  location,
   desc,
 }: {
-  time: String;
-  event: String;
-  desc: String;
+  name: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  location: string;
+  desc: string;
 }) {
   return (
     <TimelineItem>
@@ -26,11 +32,24 @@ export function TimelineItemView({
       </TimelineSeparator>
       <TimelineContent>
         <article className="prose font-mw text-green-950">
-          <h3>{time}</h3>
-          <h1>{event}</h1>
+          <h3>{startTime}</h3>
+          <h1>{name}</h1>
           <p>{desc}</p>
-          <AppButton>Add To Calendar</AppButton>
         </article>
+        <div className={"my-5"}>
+          <AddToCalendarButton
+            name={`${name} @ ${location}`}
+            description={`${name} @ ${location}`}
+            startDate={date}
+            startTime={startTime}
+            endTime={endTime}
+            timeZone="Asia/Hong_Kong"
+            options="'Apple','Google','Outlook.com'"
+            buttonStyle="date"
+            lightMode="system"
+            pastDateHandling="disable"
+          />
+        </div>
       </TimelineContent>
     </TimelineItem>
   );

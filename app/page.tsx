@@ -2,35 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 
-import {
-  Timeline,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineItem,
-  timelineItemClasses,
-  TimelineOppositeContent,
-  TimelineSeparator,
-} from "@mui/lab";
-import { Simulate } from "react-dom/test-utils";
-import blur = Simulate.blur;
-import { max, min } from "@popperjs/core/lib/utils/math";
+import { Timeline, timelineItemClasses } from "@mui/lab";
 import { TopNavBar } from "@/app/TopNavBar";
 import { TimelineItemView } from "@/app/TimeLineView";
 import WMGoogleMap from "@/app/WMGoogleMap";
-import { useFormatter } from "use-intl";
 import { APPCONSTANTS } from "@/utills/const";
-import AppButton from "@/views/AppButton";
 
 export default function Home() {
   const [headerBlurRatio, setHeaderBlurRatio] = useState(8);
   const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
+    setHeaderBlurRatio(getBlurRatioFromY(window.scrollY));
     const scroll = () => {
-      const headerBlur =
-        8 - Number.parseInt((min(80, window.scrollY) / 8).toPrecision(2));
-      setHeaderBlurRatio(headerBlur);
+      const blur = getBlurRatioFromY(window.scrollY);
+      setHeaderBlurRatio(blur);
       setOffsetY(window.scrollY);
     };
 
@@ -48,7 +34,6 @@ export default function Home() {
     >
       {/* Menu */}
       <TopNavBar />
-
       {/* Photo */}
       <div className="relative overflow-clip">
         <>
@@ -81,12 +66,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Body */}
-
       {/*Google Map*/}
       <WMGoogleMap />
-
       <div className="mt-14">
         <div className="mx-auto w-1/6 h-0.5 bg-green-900" />
 
@@ -110,7 +92,6 @@ export default function Home() {
         </div>
         <div className="mx-auto w-1/6 h-0.5 bg-green-900" />
       </div>
-
       <div className="mt-32 mx-auto grid grid-cols-1 gap-5">
         <div className="text-5xl text-center font-mw text-green-900">
           Schedule
@@ -124,16 +105,33 @@ export default function Home() {
           }}
         >
           <TimelineItemView
-            time="16:00 WM Hotel Chapel"
-            event="The Ceremony"
+            date={"2023-12-21"}
+            startTime={"16:30"}
+            endTime={"17:30"}
+            location={"WM Hotel Chapel"}
+            name={"Wedding Ceremony"}
             desc="Same day, same dress, same location, same amazing photographer +
                                     videographer. Just a much more scaled down, intimate event with bridal party only in
                                     what we have dubbed our 'minimony'."
           />
 
           <TimelineItemView
-            time="20:00 WM Hotel Basement"
-            event="Wedding Dinner"
+            date={"2023-12-21"}
+            startTime={"17:30"}
+            endTime={"18:00"}
+            location={"WM Hotel Chapel"}
+            name={"Group Photo Session"}
+            desc="Same day, same dress, same location, same amazing photographer +
+                                    videographer. Just a much more scaled down, intimate event with bridal party only in
+                                    what we have dubbed our 'minimony'."
+          />
+
+          <TimelineItemView
+            date={"2023-12-21"}
+            startTime={"18:00"}
+            endTime={"22:00"}
+            location={"WM Hotel Basement Floor"}
+            name={"Wedding Dinner"}
             desc="Same day, same dress, same location, same amazing photographer +
                                     videographer. Just a much more scaled down, intimate event with bridal party only in
                                     what we have dubbed our 'minimony'."
@@ -154,5 +152,11 @@ export default function Home() {
 
   function getLocation() {
     return "28 Wai Man Road, Sai Kung, New Territories, Hong Kong";
+  }
+
+  function getBlurRatioFromY(y: number) {
+    if (y > 80) return 0;
+    if (y < 0) return 8;
+    return (1 - y / 80) * 8;
   }
 }
