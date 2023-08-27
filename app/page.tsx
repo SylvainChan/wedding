@@ -20,6 +20,7 @@ import { TimelineItemView } from "@/app/TimeLineView";
 import WMGoogleMap from "@/app/WMGoogleMap";
 import { useFormatter } from "use-intl";
 import { APPCONSTANTS } from "@/utills/const";
+import AppButton from "@/views/AppButton";
 
 export default function Home() {
   const [headerBlurRatio, setHeaderBlurRatio] = useState(8);

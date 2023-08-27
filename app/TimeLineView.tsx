@@ -7,6 +7,7 @@ import {
 } from "@mui/lab";
 import { Button } from "@mui/joy";
 import React from "react";
+import AppButton from "@/views/AppButton";
 
 export function TimelineItemView({
   time,
@@ -28,13 +29,7 @@ export function TimelineItemView({
           <h3>{time}</h3>
           <h1>{event}</h1>
           <p>{desc}</p>
-          <Button
-            className="w-1/2 mx-auto"
-            color={"success"}
-            variant={"outlined"}
-          >
-            Add To Calendar
-          </Button>
+          <AppButton>Add To Calendar</AppButton>
         </article>
       </TimelineContent>
     </TimelineItem>
