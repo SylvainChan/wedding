@@ -1,12 +1,5 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
-
-import { Timeline, timelineItemClasses } from "@mui/lab";
 import { TopNavBar } from "@/app/view/TopNavBar";
-import { TimelineItemView } from "@/app/view/TimeLineView";
-import WMGoogleMap from "@/app/view/WMGoogleMap";
-import { APPCONSTANTS } from "@/utills/const";
 import ImageMasonry from "@/app/view/ImageGallery";
 import TransportFrom from "@/app/view/TransportFrom";
 import GreetingView from "@/app/view/GreetingView";
@@ -25,20 +18,22 @@ export default function Home() {
       {/* Menu */}
       <TopNavBar />
 
-      {/* Photo */}
-      <TopHeroView />
+      <div className={"grid grid-cols-1 gap-y-14"}>
+        {/* Photo */}
+        <TopHeroView />
 
-      {/* Greeting */}
-      <GreetingView />
+        {/* Greeting */}
+        <GreetingView />
 
-      {/* Transportation */}
-      <TransportFrom />
+        {/* Transportation */}
+        <TransportFrom />
 
-      {/* Schedule */}
-      <RundownView />
+        {/* Schedule */}
+        <RundownView />
 
-      {/* Image */}
-      <ImageMasonry />
+        {/* Image */}
+        <ImageMasonry />
+      </div>
     </div>
   );
 }

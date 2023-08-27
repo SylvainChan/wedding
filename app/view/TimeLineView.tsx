@@ -31,10 +31,10 @@ export function TimelineItemView({
         <TimelineConnector className="bg-green-900" />
       </TimelineSeparator>
       <TimelineContent>
-        <article className="prose font-mw text-green-950">
-          <h3>{startTime}</h3>
-          <h1>{name}</h1>
-          <p>{desc}</p>
+        <article className="prose-base font-lato">
+          <h1 className={"font-light"}>{startTime}</h1>
+          <h2 className={"font-bold"}>{name}</h2>
+          <h4>{desc}</h4>
         </article>
         <div className={"my-5"}>
           <AddToCalendarButton

@@ -11,6 +11,9 @@ const config: Config = {
     container: {
       center: true,
     },
+    colors: {
+      df: "#134e4a",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,6 +21,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
+        default: ["var(--font-mw)"],
         qwitcher_grypen: ["var(--font-qwitcher_grypen)"],
         ds: ["var(--font-ds)"],
         lato: ["var(--font-lato)"],

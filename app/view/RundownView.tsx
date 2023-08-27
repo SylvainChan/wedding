@@ -4,10 +4,8 @@ import React from "react";
 
 export default function RundownView() {
   return (
-    <div className="mt-32 mx-auto grid grid-cols-1 gap-5">
-      <div className="text-4xl text-center font-mw text-green-900">
-        Schedule
-      </div>
+    <div className="prose-base mx-auto ">
+      <h1 className="text-center">Schedule</h1>
       <Timeline
         sx={{
           [`& .${timelineItemClasses.root}:before`]: {

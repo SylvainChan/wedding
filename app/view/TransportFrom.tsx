@@ -4,14 +4,14 @@ import { APPCONSTANTS } from "@/utills/const";
 
 export default function TransportFrom() {
   return (
-    <div className="mt-14 prose-base md:prose-base mx-auto text-center font-lato">
+    <div className="prose-base mx-auto text-center">
       <h1 className={"font-light"}>Location & Transportation</h1>
       <div className={"grid grid-cols-1 md:grid-cols-2 gap-4"}>
         <div>
           <WMGoogleMap />
         </div>
         <div className={"mx-2"}>
-          <h2 className={"my-5 font-normal"}>
+          <h2 className={"my-5"}>
             Hotel Complimentary Shuttle Bus From Hang Hau (Ming Shing Street)
           </h2>
           <div

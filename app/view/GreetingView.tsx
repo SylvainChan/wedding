@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GreetingView() {
   return (
-    <div className="mt-14">
+    <div className="">
       <div className="mx-auto w-1/6 h-0.5 bg-green-900" />
       <div className="relative my-10 font-mw mx-3">
         <article className="prose text-center mx-auto">
@@ -18,7 +18,7 @@ export default function GreetingView() {
             the date and get ready for a night to remember! 💕
           </p>
           <h3>With love,</h3>
-          <h1>Janice & Sylvain.</h1>
+          <h1 className={"font-qwitcher_grypen"}>Janice & Sylvain.</h1>
         </article>
       </div>
       <div className="mx-auto w-1/6 h-0.5 bg-green-900" />

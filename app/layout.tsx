@@ -51,7 +51,7 @@ export default function RootLayout({
       className={`${qwitcher_grypen.variable} ${dancing_script.variable} ${lato.variable} ${mw.variable}`}
     >
       <body>
-        <Container className="px-0">{children}</Container>
+        <Container className="px-0 text-df font-default">{children}</Container>
       </body>
     </html>
   );

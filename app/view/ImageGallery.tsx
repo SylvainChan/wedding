@@ -3,6 +3,9 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 import { styled } from "@mui/material/styles";
+import { Modal } from "@mui/joy";
+import { useState } from "react";
+import { Dialog } from "@mui/material";
 
 const Label = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -15,24 +18,49 @@ const Label = styled(Paper)(({ theme }) => ({
 }));
 
 export default function ImageMasonry() {
+  const [img, setImg] = useState("");
+
   return (
-    <Masonry columns={3} spacing={0}>
-      {itemData.map((item, index) => (
-        <div key={index}>
-          <img
-            src={`/img/pwgallery/${item}?w=162&auto=format`}
-            srcSet={`/img/pwgallery/${item}?w=162&auto=format&dpr=2 2x`}
-            alt={""}
-            loading="lazy"
-            style={{
-              display: "block",
-              width: "100%",
-            }}
-          />
-        </div>
-      ))}
-    </Masonry>
+    <div>
+      <Masonry columns={3} spacing={0}>
+        {itemData.map((item, index) => (
+          <div key={index}>
+            <img
+              onClick={(event) => open(item)}
+              className={"hover:blur-0 blur-[1px]"}
+              src={`/img/pwgallery/${item}?w=162&auto=format`}
+              srcSet={`/img/pwgallery/${item}?w=162&auto=format&dpr=2 2x`}
+              alt={""}
+              loading="lazy"
+              style={{
+                display: "block",
+                width: "100%",
+              }}
+            />
+          </div>
+        ))}
+      </Masonry>
+      <Open />
+    </div>
   );
+
+  function open(img: string) {
+    setImg(img);
+  }
+
+  function Open() {
+    return (
+      <Dialog onClose={(event) => setImg("")} open={img.length !== 0}>
+        <img
+          className={"mx-auto"}
+          src={`/img/pwgallery/${img}?w=162&auto=format`}
+          srcSet={`/img/pwgallery/${img}?w=162&auto=format&dpr=2 2x`}
+          alt={""}
+          loading="lazy"
+        />
+      </Dialog>
+    );
+  }
 }
 
 const itemData = [
@@ -66,4 +94,4 @@ const itemData = [
   "ecbdcc44-beca-469e-9b69-ec8e3637b1a3.jpeg",
   "f3c7f66f-7146-495e-a265-f3e89f4ddfdd.jpeg",
   "fab36f38-cc3b-43e5-a370-59afba19ff3a.jpeg",
-].sort(() => 0.5 - Math.random());
+];

@@ -18,7 +18,7 @@ export default function () {
   }, []);
 
   return (
-    <div className="relative overflow-clip">
+    <div className="relative overflow-clip font-mw">
       <>
         <video
           controls={false}
@@ -32,25 +32,23 @@ export default function () {
         </video>
       </>
       <div className="absolute top-0 left-0 w-full">
-        <article className="prose-green prose-2xl mt-14 mx-auto text-center font-mw text-teal-900">
-          <h3>Let's Celebrate</h3>
+        <article className="prose-sm md:prose-lg mt-14 mx-auto text-center">
+          <h1 className={"font-bold"}>Let's Celebrate</h1>
           <img
-            className={`my-10 w-3/5 mx-auto object-contain`}
+            className={`w-3/5 mx-auto object-contain`}
             style={{ filter: `blur(${headerBlurRatio}px)` }}
             alt={""}
             src="/img/banner.png"
           />
-          <p>On {getWeddingDateTime()}</p>
+          <h2>{getWeddingDateTime()}</h2>
         </article>
 
         <img
-          className="mt-14 mx-auto invert h-[80px]"
+          className="mt-4 mx-auto invert h-[80px]"
           src="https://www.wmhotel.hk/css/WMLOGO.png"
           alt={""}
         />
-        <div className="mt-2 mx-auto text-center font-ds text-2xl">
-          {getLocation()}
-        </div>
+        <h3 className="mt-4 mx-auto text-center font-bold">{getLocation()}</h3>
       </div>
     </div>
   );
@@ -58,7 +56,7 @@ export default function () {
   function getWeddingDateTime() {
     let datetime = new Date(APPCONSTANTS.WEDDING_START);
 
-    return `${datetime.getDate()}/${datetime.getMonth()}/${datetime.getFullYear()} At ${datetime.getHours()}:${datetime
+    return `On ${datetime.getDate()}/${datetime.getMonth()}/${datetime.getFullYear()} At ${datetime.getHours()}:${datetime
       .getMinutes()
       .toString()
       .padStart(2, "0")}`;
