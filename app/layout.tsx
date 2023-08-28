@@ -54,10 +54,10 @@ export default function RootLayout({
       className={`${qwitcher_grypen.variable} ${dancing_script.variable} ${lato.variable} ${mw.variable}`}
     >
       <body>
-        <Container className="px-0 text-df font-default">
+        <div className="container mx-auto text-df font-default">
           <TopNavBar />
           <Suspense fallback={<Loading />}>{children}</Suspense>
-        </Container>
+        </div>
       </body>
     </html>
   );
