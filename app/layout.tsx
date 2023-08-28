@@ -11,6 +11,8 @@ import {
 } from "next/font/google";
 import { Container } from "@mui/material";
 import { TopNavBar } from "@/app/view/TopNavBar";
+import { Suspense } from "react";
+import Loading from "@/app/loading";
 
 const qwitcher_grypen = Qwitcher_Grypen({
   subsets: ["latin"],
@@ -54,7 +56,7 @@ export default function RootLayout({
       <body>
         <Container className="px-0 text-df font-default">
           <TopNavBar />
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </Container>
       </body>
     </html>
