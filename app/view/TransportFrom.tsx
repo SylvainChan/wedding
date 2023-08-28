@@ -11,9 +11,9 @@ export default function TransportFrom() {
           <WMGoogleMap />
         </div>
         <div className={"mx-2"}>
-          <h2 className={"my-5"}>
+          <h3 className={"my-5 text-justify font-bold"}>
             Hotel Complimentary Shuttle Bus From Hang Hau (Ming Shing Street)
-          </h2>
+          </h3>
           <div
             className={
               "flex flex-row gap-2 flex-wrap text-2xl font-bold mx-auto justify-center"
@@ -37,14 +37,22 @@ export default function TransportFrom() {
             contact the hotel concierge to reserve seats for the shuttle bus
             departing from WM Hotel.
           </div>
+          <h3 className={"my-5 text-justify font-bold"}>
+            🚌Walking Route and Public Transport🚶
+          </h3>
           <button
             className={
-              "border border-green-900 hover:bg-green-900 hover:text-white rounded-full px-4 py-2 text-sm"
+              "border border-green-900 hover:bg-green-900 hover:text-white font-bold rounded-full px-4 py-2 text-sm"
             }
             onClick={gotoPublicTransportPdf}
           >
-            Walking Route and Public Transport
+            Check HERE!
           </button>
+          <h3 className={"my-5 text-justify font-bold"}>Driving & Parking</h3>
+          <p className={"text-justify"}>
+            We have reserved 18 free parking slots. Check with us if you want to
+            drive there!
+          </p>
         </div>
       </div>
     </div>

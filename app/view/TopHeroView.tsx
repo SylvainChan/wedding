@@ -18,7 +18,7 @@ export default function () {
   }, []);
 
   return (
-    <div className="relative overflow-clip font-mw">
+    <div className="relative overflow-clip font-mw min-h-fit">
       <>
         <video
           controls={false}

@@ -33,6 +33,7 @@ export default function RundownView() {
         />
 
         <TimelineItemView
+
           date={"2023-12-21"}
           startTime={"19:00"}
           endTime={"22:00"}

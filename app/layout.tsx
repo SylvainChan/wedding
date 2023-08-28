@@ -10,6 +10,7 @@ import {
   Roboto_Mono,
 } from "next/font/google";
 import { Container } from "@mui/material";
+import { TopNavBar } from "@/app/view/TopNavBar";
 
 const qwitcher_grypen = Qwitcher_Grypen({
   subsets: ["latin"],
@@ -51,7 +52,10 @@ export default function RootLayout({
       className={`${qwitcher_grypen.variable} ${dancing_script.variable} ${lato.variable} ${mw.variable}`}
     >
       <body>
-        <Container className="px-0 text-df font-default">{children}</Container>
+        <Container className="px-0 text-df font-default">
+          <TopNavBar />
+          {children}
+        </Container>
       </body>
     </html>
   );

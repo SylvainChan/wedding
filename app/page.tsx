@@ -15,9 +15,6 @@ export default function Home() {
           'url("https://wedsites.s3.amazonaws.com/accounts/3493/header/898/wallpaper-1620343201.png")',
       }}
     >
-      {/* Menu */}
-      <TopNavBar />
-
       <div className={"grid grid-cols-1 gap-y-14"}>
         {/* Photo */}
         <TopHeroView />
