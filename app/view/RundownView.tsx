@@ -5,7 +5,7 @@ import React from "react";
 export default function RundownView() {
   return (
     <div className="prose-base mx-auto ">
-      <h1 className="text-center">Schedule</h1>
+      <h1 className="text-center font-light">Timeline</h1>
       <Timeline
         sx={{
           [`& .${timelineItemClasses.root}:before`]: {
@@ -33,7 +33,6 @@ export default function RundownView() {
         />
 
         <TimelineItemView
-
           date={"2023-12-21"}
           startTime={"19:00"}
           endTime={"22:00"}

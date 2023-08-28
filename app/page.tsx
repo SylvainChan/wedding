@@ -1,5 +1,4 @@
 "use client";
-import { TopNavBar } from "@/app/view/TopNavBar";
 import ImageMasonry from "@/app/view/ImageGallery";
 import TransportFrom from "@/app/view/TransportFrom";
 import GreetingView from "@/app/view/GreetingView";
