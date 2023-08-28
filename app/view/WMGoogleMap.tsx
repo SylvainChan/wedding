@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WMGoogleMap() {
   return (
-    <div className="relative min-h-[400px] h-full">
+    <div className="h-full overflow-clip">
       <iframe
         width="100%"
         height="100%"

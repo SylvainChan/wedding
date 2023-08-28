@@ -12,17 +12,25 @@ export function TopNavBar() {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = (selected: string) => {
+
+  enum NavMenuItem {
+    home = "Home",
+    location = "Location",
+    schedule = "Schedule",
+  }
+
+  const handleClose = (selected: NavMenuItem) => {
     setAnchorEl(null);
-    switch (selected.toLowerCase()) {
-      case "home":
+
+    switch (selected) {
+      case NavMenuItem.home:
         router.push("/");
         break;
-      case "how to get there":
-        router.push("/travel/from");
+      case NavMenuItem.schedule:
+        router.push("/schedule");
         break;
-      case "how to leave":
-        router.push("/travel/leave");
+      case NavMenuItem.location:
+        router.push("/location");
         break;
     }
   };
@@ -54,12 +62,8 @@ export function TopNavBar() {
               open={open}
               onClose={handleClose}
             >
-              {["Home", "How to get there", "How to leave"].map((option) => (
-                <MenuItem
-                  key={option}
-                  selected={option === "Pyxis"}
-                  onClick={() => handleClose(option)}
-                >
+              {Object.values(NavMenuItem).map((option) => (
+                <MenuItem key={option} onClick={() => handleClose(option)}>
                   {option}
                 </MenuItem>
               ))}

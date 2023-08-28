@@ -55,8 +55,16 @@ export default function RootLayout({
     >
       <body>
         <div className="container mx-auto text-df font-default">
-          <TopNavBar />
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <div
+            className="bg-cover bg-bottom bg-fixed bg-no-repeat min-h-screen"
+            style={{
+              backgroundImage:
+                'url("https://wedsites.s3.amazonaws.com/accounts/3493/header/898/wallpaper-1620343201.png")',
+            }}
+          >
+            <TopNavBar />
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </div>
         </div>
       </body>
     </html>
