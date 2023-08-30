@@ -4,7 +4,7 @@ import React from "react";
 
 export default function RundownView() {
   return (
-    <div className="prose-base mx-auto ">
+    <div className="prose-base mx-auto w-full md:w-1/2">
       <h1 className="text-center font-light">Timeline</h1>
       <Timeline
         sx={{
